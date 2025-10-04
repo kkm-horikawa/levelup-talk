@@ -79,11 +79,11 @@ function App() {
       const newTurnCount = turnCount + 1;
       setTurnCount(newTurnCount);
 
-      // レベルごとの必要問数: レベル1は1問、レベル2は2問、レベル3以降は3問
-      const requiredQuestions = selectedLevel === 1 ? 1 : selectedLevel === 2 ? 2 : 3;
+      // レベルごとの必要問数: レベル1は4問、レベル2は6問、レベル3以降はずっとレベル3
+      const requiredQuestions = selectedLevel === 1 ? 4 : selectedLevel === 2 ? 6 : 0;
 
       // 必要問数に達したらレベルアップ
-      if (newTurnCount >= requiredQuestions && selectedLevel < 3) {
+      if (requiredQuestions > 0 && newTurnCount >= requiredQuestions && selectedLevel < 3) {
         setSelectedLevel((prev) => (prev + 1) as 1 | 2 | 3);
         setTurnCount(0);
       }
@@ -184,7 +184,7 @@ function App() {
                 <li>✅ 答えられなかったらペナルティ（一気飲みなど）</li>
                 <li>✅ 嘘は禁止の約束</li>
                 <li>
-                  ✅ レベルアップモードはレベル1は1問、レベル2は2問、レベル3以降は3問でレベルアップ
+                  ✅ レベルアップモードはレベル1を4問、レベル2を6問答えるとレベルアップ
                 </li>
               </ul>
             </div>
@@ -221,7 +221,9 @@ function App() {
                   className="w-full py-6 px-8 bg-gradient-to-r from-red-400 to-red-600 hover:from-red-500 hover:to-red-700 text-white rounded-2xl font-bold text-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl active:scale-95"
                 >
                   🔥 レベル3 - 深い話
-                  <p className="text-sm font-normal mt-2 text-red-100">本音で語り合おう（下ネタ強め）</p>
+                  <p className="text-sm font-normal mt-2 text-red-100">
+                    本音で語り合おう（下ネタ強め）
+                  </p>
                 </button>
               </div>
               <button
