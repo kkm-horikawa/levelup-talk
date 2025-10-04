@@ -183,9 +183,7 @@ function App() {
                 <li>✅ 質問を相手に投げかけて答えてもらおう</li>
                 <li>✅ 答えられなかったらペナルティ（一気飲みなど）</li>
                 <li>✅ 嘘は禁止の約束</li>
-                <li>
-                  ✅ レベルアップモードはレベル1を4問、レベル2を6問答えるとレベルアップ
-                </li>
+                <li>✅ レベルアップモードはレベル1を4問、レベル2を6問答えるとレベルアップ</li>
               </ul>
             </div>
           </div>
@@ -252,7 +250,10 @@ function App() {
                     onClick={() => handleCategorySelect(category)}
                     className="py-4 px-4 bg-gradient-to-r from-teal-400 to-cyan-500 hover:from-teal-500 hover:to-cyan-600 text-white rounded-xl font-bold text-sm shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95"
                   >
-                    {category}
+                    <div>{category}</div>
+                    {category === '究極の2択' && (
+                      <div className="text-xs mt-1 opacity-80">（過激）</div>
+                    )}
                   </button>
                 ))}
               </div>
