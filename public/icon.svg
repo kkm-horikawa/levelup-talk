@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9333ea;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main card stack -->
+  <rect x="25" y="35" width="45" height="60" rx="5" fill="#d946ef" opacity="0.4" transform="rotate(-10 47.5 65)"/>
+  <rect x="22" y="32" width="45" height="60" rx="5" fill="#ec4899" opacity="0.6" transform="rotate(-5 44.5 62)"/>
+  <rect x="20" y="30" width="45" height="60" rx="5" fill="url(#cardGradient)"/>
+
+  <!-- Speech bubble -->
+  <circle cx="72" cy="25" r="18" fill="#fbbf24"/>
+  <polygon points="66,38 60,48 72,40" fill="#fbbf24"/>
+
+  <!-- Level up arrow in speech bubble -->
+  <path d="M 72 18 L 72 32 M 72 18 L 67 23 M 72 18 L 77 23" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Question mark on card -->
+  <text x="42.5" y="55" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">?</text>
+</svg>
