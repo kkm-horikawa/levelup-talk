@@ -454,6 +454,8 @@ function App() {
                     questions={currentLevelQuestions}
                     onCardSelect={handleCardSelect}
                     mode="manual"
+                    timeLimit={timeLimit}
+                    onTimeLimitChange={setTimeLimit}
                   />
 
                   <div className="mt-6 p-4 bg-blue-50 rounded-xl">
