@@ -221,7 +221,7 @@ function App() {
                   className="w-full py-6 px-8 bg-gradient-to-r from-red-400 to-red-600 hover:from-red-500 hover:to-red-700 text-white rounded-2xl font-bold text-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl active:scale-95"
                 >
                   🔥 レベル3 - 深い話
-                  <p className="text-sm font-normal mt-2 text-red-100">本音で語り合おう</p>
+                  <p className="text-sm font-normal mt-2 text-red-100">本音で語り合おう（下ネタ強め）</p>
                 </button>
               </div>
               <button
