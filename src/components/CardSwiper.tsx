@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { Swiper as SwiperType } from 'swiper';
-import { EffectCards } from 'swiper/modules';
+import { EffectCards, Virtual } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
@@ -146,13 +146,18 @@ export const CardSwiper = ({
         <Swiper
           effect={'cards'}
           grabCursor={true}
-          modules={[EffectCards]}
+          modules={[EffectCards, Virtual]}
           className="w-72 h-96"
           onSlideChange={handleSlideChange}
           allowTouchMove={true}
+          virtual={{
+            enabled: true,
+            addSlidesAfter: 2,
+            addSlidesBefore: 2,
+          }}
         >
-          {shuffledQuestions.map((question) => (
-            <SwiperSlide key={question.id}>
+          {shuffledQuestions.map((question, index) => (
+            <SwiperSlide key={question.id} virtualIndex={index}>
               <div className="w-full h-full bg-gradient-to-br from-pink-400 to-purple-600 rounded-3xl shadow-2xl flex items-center justify-center p-8 relative overflow-hidden">
                 {/* 手書き風の装飾 */}
                 <div className="absolute top-4 right-4 text-white/20 text-6xl font-bold">
